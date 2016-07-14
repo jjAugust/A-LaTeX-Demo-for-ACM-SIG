@@ -1,52 +1,4 @@
-% SIG-ALTERNATE.CLS - VERSION 2.8
-% "COMPATIBLE" WITH THE "ACM_PROC_ARTICLE-SP.CLS" V3.2SP
-% Gerald Murray - May 23rd 2012
-% Boris Veytsman - April 23 2013
-% Boris Veytsman - May 12 2013
-% Boris Veytsman - June 09 2013
-% Boris Veytsman - August 12 2013
-%
-% ---- Start of 'updates'  ----
-% Added new permission/copyright statement - BV
-% Changed $10 fee to $15 -- May 2012  --  Gerry
-% Changed $5 fee to $10 --  April 2009 -- Gerry
-% April 22nd. 2009 - Fixed 'Natbib' incompatibility problem - Gerry
-% April 22nd. 2009 - Fixed 'Babel' incompatibility problem - Gerry
-% April 22nd. 2009 - Inserted various bug-fixes and improvements - Gerry
-%
-% To produce Type 1 fonts in the document plus allow for 'normal LaTeX accenting' in the critical areas;
-% title, author block, section-heads, confname, etc. etc. 
-% i.e. the whole purpose of this version update is to NOT resort to 'inelegant accent patches'.
-% After much research, three extra .sty packages were added to the the tail (ae, aecompl, aeguill) to solve,
-% in particular, the accenting problem(s). We _could_ ask authors (via instructions/sample file) to 'include' these in
-% the source .tex file - in the preamble - but if everything is already provided ('behind the scenes' - embedded IN the .cls)
-% then this is less work for authors and also makes everything appear 'vanilla'.
-% NOTE: all 'patchwork accenting" has been commented out (here) and is no longer 'used' in the sample .tex file (either).
-% Gerry June 2007
-%
-% Patch for accenting in conference name/location. Gerry May 3rd. 2007
-% Rule widths changed to .5, author count (>6) fixed, roll-back for Type 3 problem. Gerry March 20th. 2007
-% Changes made to 'modernize' the fontnames but esp. for MikTeX users V2.4/2.5 - Nov. 30th. 2006
-% Updated the \email definition to allow for its use inside of 'shared affiliations' - Nov. 30th. 2006
-% Fixed the 'section number depth value' - Nov. 30th. 2006
-%
-% Footnotes inside table cells using \minipage (Oct. 2002)
-% Georgia fixed bug in sub-sub-section numbering in paragraphs (July 29th. 2002)
-% JS/GM fix to vertical spacing before Proofs (July 30th. 2002)
-%
-% Made the Permission Statement / Conference Info / Copyright Info
-% 'user definable' in the source .tex file OR automatic if
-% not specified.
-%
-% Allowance made to switch default fonts between those systems using
-% normal/modern font names and those using 'Type 1' or 'Truetype' fonts.
-% See LINE NUMBER 255 for details.
-% Also provided for enumerated/annotated Corollaries 'surrounded' by
-% enumerated Theorems (line 848).
-% Gerry November 11th. 1999
-%
-% ---- End of 'updates' ----
-%
+% SIG-ALTERNATE.CLS 
 \def\fileversion{v2.9}          % for ACM's tracking purposes
 \def\filedate{August 12, 2013}    % Gerry Murray's tracking data
 \def\docdate {\filedate}
@@ -54,69 +6,7 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsfonts}
-% Need this for accents in Arial/Helvetica
-%\usepackage[T1]{fontenc}  % Gerry March 12, 2007 - causes Type 3 problems (body text)
-%\usepackage{textcomp}
-%
-% SIG-ALTERNATE DOCUMENT STYLE
-% G.K.M. Tobin August-October 1999
-%    adapted from ARTICLE document style by Ken Traub, Olin Shivers
-%    also using elements of esub2acm.cls
-% HEAVILY MODIFIED, SUBSEQUENTLY, BY GERRY MURRAY 2000
-% ARTICLE DOCUMENT STYLE -- Released 16 March 1988
-%    for LaTeX version 2.09
-% Copyright (C) 1988 by Leslie Lamport
-%
-%
-%%% sig-alternate.cls is an 'ALTERNATE' document style for producing
-%%% two-column camera-ready pages for ACM conferences.
-%%% THIS FILE DOES NOT STRICTLY ADHERE TO THE SIGS (BOARD-ENDORSED)
-%%% PROCEEDINGS STYLE. It has been designed to produce a 'tighter'
-%%% paper in response to concerns over page budgets.
-%%% The main features of this style are:
-%%%
-%%% 1)  Two columns.
-%%% 2)  Side and top margins of 4.5pc, bottom margin of 6pc, column gutter of
-%%%     2pc, hence columns are 20pc wide and 55.5pc tall.  (6pc =3D 1in, approx)
-%%% 3)  First page has title information, and an extra 6pc of space at the
-%%%     bottom of the first column for the ACM copyright notice.
-%%% 4)  Text is 9pt on 10pt baselines; titles (except main) are 9pt bold.
-%%%
-%%%
-%%% There are a few restrictions you must observe:
-%%%
-%%% 1)  You cannot change the font size; ACM wants you to use 9pt.
-%%% 3)  You must start your paper with the \maketitle command.  Prior to the
-%%%     \maketitle you must have \title and \author commands.  If you have a
-%%%     \date command it will be ignored; no date appears on the paper, since
-%%%     the proceedings will have a date on the front cover.
-%%% 4)  Marginal paragraphs, tables of contents, lists of figures and tables,
-%%%     and page headings are all forbidden.
-%%% 5)  The `figure' environment will produce a figure one column wide; if you
-%%%     want one that is two columns wide, use `figure*'.
-%%%
-%
-%%% Copyright Space:
-%%% This style automatically reserves 1" blank space at the bottom of page 1/
-%%% column 1.  This space can optionally be filled with some text using the
-%%% \toappear{...} command.  If used, this command must be BEFORE the \maketitle
-%%% command.  If this command is defined AND [preprint] is on, then the
-%%% space is filled with the {...} text (at the bottom); otherwise, it is
-%%% blank.  If you use \toappearbox{...} instead of \toappear{...} then a
-%%% box will be drawn around the text (if [preprint] is on).
-%%%
-%%% A typical usage looks like this:
-%%%     \toappear{To appear in the Ninth AES Conference on Medievil Lithuanian
-%%%               Embalming Technique, June 1991, Alfaretta, Georgia.}
-%%% This will be included in the preprint, and left out of the conference
-%%% version.
-%%%
-%%% WARNING:
-%%% Some dvi-ps converters heuristically allow chars to drift from their
-%%% true positions a few pixels. This may be noticeable with the 9pt sans-serif
-%%% bold font used for section headers.
-%%% You may turn this hackery off via the -e option:
-%%%     dvips -e 0 foo.dvi >foo.ps
+
 %%%
 \typeout{Document Class 'sig-alternate' <9th June '13>.  Modified by
   G.K.M. Tobin/Gerry Murray/Boris Veytsman}
@@ -1742,41 +1632,7 @@
 \endinput
 %
 %
-%% This is file `aeguill.sty' 
-% This file gives french guillemets (and not guillemots!)
-% built with the Polish CMR fonts (default), WNCYR fonts, the LASY fonts 
-% or with the EC fonts. 
-% This is useful in conjunction with the ae package
-% (this package loads the ae package in case it has not been loaded)
-%  and with or without the french(le) package.
-%
-% In order to get the guillemets, it is necessary to either type
-% \guillemotleft and \guillemotright, or to use an 8 bit encoding
-% (such as ISO-Latin1) which selects these two commands, 
-% or, if you use the french package (but not the frenchle package), 
-% to type << or >>.
-%
-% By default, you get the Polish CMR guillemets; if this package is loaded
-% with the `cm' option, you get the LASY guillemets; with `ec,' you
-% get the EC guillemets, and with `cyr,' you get the cyrillic guillemets.
-%
-% In verbatim mode, you always get the EC/TT guillemets.
-%
-% The default option is interesting in conjunction with PDF,
-% because there is a Type 1 version of the Polish CMR fonts
-% and these guillemets are very close in shape to the EC guillemets.
-% There are no free Type 1 versions of the EC fonts.
-%
-% Support for Polish CMR guillemets was kindly provided by 
-% Rolf Niepraschk <niepraschk@ptb.de> in version 0.99 (2000/05/22).
-% Bernd Raichle provided extensive simplifications to the code
-% for version 1.00.
-%
-% This package is released under the LPPL.
-%
-% Changes:
-%   Date        version
-%   2001/04/12  1.01    the frenchle and french package are now distinguished.
+
 %
 \def\fileversion{1.01}
 \def\filedate{2001/04/12}
