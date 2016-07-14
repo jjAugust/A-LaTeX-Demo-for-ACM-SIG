@@ -3,6 +3,7 @@ A LaTeX Demo for ACM-SIG
 
 Best wishes to you
 Jinliang Xu(许金良)
+
 HomePage：http://www.jinliangxu.com/
 Blog：http://blog.csdn.net/u012176591
 --------------------------------------------------------------------------------------------------------------------
